@@ -1,9 +1,9 @@
 import React, {useEffect} from 'react'
 
-const Filter = ({cards, setFilter, activeFilter, setActiveFilter}) => {
+const Filter = ({cards, tags, setFilter, activeFilter, setActiveFilter}) => {
 
     useEffect(() => {
-        if (activeFilter === "all") {
+        if (activeFilter === "All") {
             setFilter(cards);
             return;
         }
@@ -11,14 +11,17 @@ const Filter = ({cards, setFilter, activeFilter, setActiveFilter}) => {
             card.tags.includes(activeFilter)
         );
         setFilter(filteredCards);
-    }, [activeFilter])
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [activeFilter]);
+
   return (
     <div className='filter-container'>
-        <button className={activeFilter==="all" ? "active" : ""} onClick={() => setActiveFilter("all")}>All</button>
-        <button className={activeFilter==="engineering" ? "active" : ""} onClick={() => setActiveFilter("engineering")}>Engineering</button>
-        <button className={activeFilter==="programming" ? "active" : ""} onClick={() => setActiveFilter("programming")}>Programming</button>
+        <button className={activeFilter==="All" ? "active" : ""} onClick={() => setActiveFilter("All")}>All</button>
+        {tags.map((tag) => { return (
+             <button key={tags.indexOf(tag)} className={activeFilter===tag ? "active" : ""} onClick={() => setActiveFilter(tag)}>{tag}</button>
+        )})}        
     </div>
   )
 }
 
-export default Filter
+export default Filter;
