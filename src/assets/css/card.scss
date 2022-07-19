@@ -1,0 +1,40 @@
+.card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    width: auto;
+    border: double 4px transparent;
+    border-radius: 5px;
+    background-image: linear-gradient($black, $black), linear-gradient(to bottom, #743ad5, #d53a9d, #47d53a);
+    background-origin: border-box;
+    background-clip: content-box, border-box;
+    margin: 10px;
+}
+
+.card-image {
+    width:100%;
+    margin:0;
+    border-radius: 4px;
+}
+
+.card-body {
+    padding: 0px;
+    border: 2px solid $white;
+}
+.card-header {
+    margin-bottom: 0;
+    padding: 0px;
+}
+
+.card-title{
+    padding: 10px;
+    color: $white;
+    font-weight: 900;
+    text-align: center;
+    
+}
+
+.card-text {
+    color: $muted-gray;
+}

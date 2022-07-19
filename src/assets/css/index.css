@@ -1,14 +1,129 @@
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  background: #0c0c0c;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  margin: 5% 20%;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
 }
+
+/*.app {
+}
+*/
+.cards {
+  display: grid;
+  place-items: center;
+}
+
+.filter-container {
+  text-align: center;
+}
+
+.filter-container button {
+  margin: 0.5rem 1rem;
+  min-width: 5rem;
+  padding: 0.5rem 1rem;
+  border: none;
+  background: transparent;
+  color: rgb(65, 98, 168);
+  border-radius: 1rem;
+  border: 2px solid rgb(65, 98, 168);
+  font-weight: bold;
+  cursor: pointer;
+}
+
+button.active {
+  background: rgb(65, 98, 168);
+  color: white;
+}
+
+.card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  width: auto;
+  border: double 4px transparent;
+  border-radius: 5px;
+  background-image: linear-gradient(#0c0c0c, #0c0c0c), linear-gradient(to bottom, #743ad5, #d53a9d, #47d53a);
+  background-origin: border-box;
+  background-clip: content-box, border-box;
+  margin: 10px;
+}
+
+.card-image {
+  width: 100%;
+  margin: 0;
+  border-radius: 4px;
+}
+
+.card-body {
+  padding: 0px;
+  border: 2px solid #fff;
+}
+
+.card-header {
+  margin-bottom: 0;
+  padding: 0px;
+}
+
+.card-title {
+  padding: 10px;
+  color: #fff;
+  font-weight: 900;
+  text-align: center;
+}
+
+.card-text {
+  color: #707070;
+}
+
+/* For Mobile */
+@media screen and (max-width: 540px) {
+  .cards {
+    grid-template-columns: 1fr;
+  }
+  .card {
+    width: 90vw;
+    border-width: 1.2vw;
+  }
+  /*
+    .card-image {
+        width: $card-width - ($border-width * 2);
+    }
+  */
+  .card-title {
+    font-size: 4.5vw;
+  }
+}
+/* For Tablets */
+@media screen and (min-width: 540px) and (max-width: 780px) {
+  .cards {
+    grid-template-columns: 1fr 1fr;
+  }
+  .card {
+    width: 45vw;
+    border-width: 0.8vw;
+  }
+  .card-title {
+    font-size: 2.5vw;
+  }
+}
+/* Everything else */
+@media screen and (min-width: 780px) {
+  .cards {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+  .card {
+    width: 30vw;
+    border-width: 0.4vw;
+  }
+  .card-title {
+    font-size: 1.5vw;
+  }
+}
+
+/*# sourceMappingURL=index.css.map */

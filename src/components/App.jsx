@@ -1,5 +1,4 @@
 import { useEffect, useState } from 'react';
-import '../assets/css/App.css';
 import Card from './Card';
 import Filter from './Filter'
 import {motion, AnimatePresence} from 'framer-motion'
@@ -39,7 +38,7 @@ function App() {
   }
  
   return (
-    <div className="App">
+    <div className="app">
       <Filter
       cards={cards}
       tags={tags}
@@ -47,7 +46,7 @@ function App() {
       activeFilter={activeFilter}
       setActiveFilter={setActiveFilter}
       />
-      <motion.div layout className="Cards">
+      <motion.div layout className="cards">
         <AnimatePresence>
         {filter.map((card) => {
           return <Card key={card.id} card={card}/>;

@@ -1,0 +1,88 @@
+// Colors
+$white: #fff;
+$black: #0c0c0c;
+$highlight: #6f199d;
+$highlight-old: #0f33ff;
+$muted-gray: #707070;
+$muted-gray-old: #282828;
+
+body {
+  margin: 0;
+  background: $black;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+@import "./app";
+@import "./card.scss";
+
+/* For Mobile */
+@media screen and (max-width: 540px) {
+  $card-width: 90vw;
+  $border-width: 1.2vw;
+  $font-size: 4.5vw;
+  .cards {
+      grid-template-columns: 1fr;
+  }
+
+  .card {
+      width: $card-width;
+      border-width: $border-width;
+  }
+/*
+  .card-image {
+      width: $card-width - ($border-width * 2);
+  }
+*/
+  .card-title {
+      font-size: $font-size;
+  }
+}
+
+/* For Tablets */
+@media screen and (min-width: 540px) and (max-width: 780px) {
+  $card-width: 45vw;
+  $border-width: 0.8vw;
+  $font-size: 2.5vw;
+
+  .cards {
+      grid-template-columns: 1fr 1fr;
+  }
+
+  .card {
+      width: $card-width;
+      border-width: $border-width;
+  }
+
+  .card-title {
+      font-size: $font-size;
+  }
+}
+
+/* Everything else */
+@media screen and (min-width:780px) {
+  $card-width: 30vw;
+  $border-width: 0.4vw;
+  $font-size: 1.5vw;
+
+  .cards {
+      grid-template-columns: 1fr 1fr 1fr;
+  }
+
+  .card {
+      width: $card-width;
+      border-width: $border-width;
+  }
+
+  .card-title {
+      font-size: $font-size;
+  }
+}
