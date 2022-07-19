@@ -22,9 +22,13 @@ function App() {
   const getTags = () => {
     let tags = [];
     cards.map((card) => {
-      if (!tags.includes(card.tags)) {
-        tags.append(card.tags);
-      }
+      let obj = JSON.parse(card.tags);
+      obj.forEach((tag) => {
+        if (!tags.includes(tag)) {
+          tags.push(tag);
+          console.log(tags);
+        }
+      });
     });
     console.log(tags);
     return tags;
