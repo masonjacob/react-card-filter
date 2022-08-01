@@ -5,6 +5,7 @@ $highlight: #6f199d;
 $highlight-old: #0f33ff;
 $muted-gray: #707070;
 $muted-gray-old: #282828;
+$card-scalar: 1.0;
 
 body {
   margin: 0;
@@ -26,9 +27,9 @@ code {
 
 /* For Mobile */
 @media screen and (max-width: 540px) {
-  $card-width: 90vw;
-  $border-width: 1.2vw;
-  $font-size: 4.5vw;
+  $card-width: 90vw * $card-scalar;
+  $border-width: 1.2vw * $card-scalar;
+  $font-size: 4.5vw * $card-scalar;
   .cards {
       grid-template-columns: 1fr;
   }
@@ -49,9 +50,9 @@ code {
 
 /* For Tablets */
 @media screen and (min-width: 540px) and (max-width: 780px) {
-  $card-width: 45vw;
-  $border-width: 0.8vw;
-  $font-size: 2.5vw;
+  $card-width: 45vw * $card-scalar;
+  $border-width: 0.8vw * $card-scalar;
+  $font-size: 2.5vw * $card-scalar;
 
   .cards {
       grid-template-columns: 1fr 1fr;
@@ -69,9 +70,9 @@ code {
 
 /* Everything else */
 @media screen and (min-width:780px) {
-  $card-width: 30vw;
-  $border-width: 0.4vw;
-  $font-size: 1.5vw;
+  $card-width: 30vw * $card-scalar;
+  $border-width: 0.4vw * $card-scalar;
+  $font-size: 1.5vw * $card-scalar;
 
   .cards {
       grid-template-columns: 1fr 1fr 1fr;
